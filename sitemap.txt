@@ -1,0 +1,17 @@
+Home (/)
+├── About (/about.html)
+├── Blog (/blog.html)
+│   └── Individual posts → linked to newsletter.askloutos.com/p/{post-slug}
+│       (blog-post.html is the reusable on-site template for posts)
+├── Resources (/resources.html)
+├── Newsletter (→ newsletter.askloutos.com, external)
+└── Footer links:
+    ├── Privacy Policy (/privacy.html)
+    └── Contact (mailto:kent.law0923@gmail.com)
+
+Navigation rules:
+- Every page shares the same header/footer markup.
+- "Subscribe" nav CTA and all "Newsletter" links point to external newsletter.askloutos.com.
+- Internal links use relative paths (about.html, blog.html, etc.), not absolute.
+- Individual blog posts live on Beehiiv (newsletter.askloutos.com/p/{slug}); blog-post.html
+  is the template for posts that get a full on-site page.
