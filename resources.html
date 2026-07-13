@@ -7,24 +7,88 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://newsletter.askloutos.com">Newsletter</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">A</span>
+                <span class="brand-word">Askloutos Letter<i>_</i></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+            <label for="nav-toggle" class="nav-toggle" aria-label="Menu"><span></span></label>
+            <nav class="nav-links">
+                <a class="nav-link" href="index.html">Letters</a>
+                <a class="nav-link is-active" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com">Subscribe</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h1>Resources</h1>
-        <p>Videos, articles, and guides on longevity and economic history.</p>
-        <p><a href="index.html">← Back to Home</a></p>
+        <section class="section">
+            <div class="container">
+                <div class="kicker">RESOURCES</div>
+                <h1 class="mb-6">Resources</h1>
+                <p class="mb-6">Videos, articles, and guides on longevity and economic history.</p>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="post-card-kicker">Reading list</div>
+                        <h3 class="mt-2 mb-2">The longevity bookshelf</h3>
+                        <p class="text-small m-0">Foundational texts on actuarial history, annuities, and the economics of aging.</p>
+                    </div>
+                    <div class="card">
+                        <div class="post-card-kicker">Guides</div>
+                        <h3 class="mt-2 mb-2">How to read a life table</h3>
+                        <p class="text-small m-0">A short primer on the 300-year-old tool that still prices your retirement.</p>
+                    </div>
+                    <div class="card">
+                        <div class="post-card-kicker">Archive</div>
+                        <h3 class="mt-2 mb-2">Every letter, indexed</h3>
+                        <p class="text-small m-0">Browse past issues of The Askloutos Letter by topic and date.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <a class="btn btn-secondary" href="index.html">← Back to letters</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Kent Lawrence. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand brand-inverse" href="index.html">
+                        <span class="brand-mark">A</span>
+                        <span class="brand-word">Askloutos Letter<i>_</i></span>
+                    </a>
+                    <p>Essays on longevity and economic history. One letter a week.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">READ</div>
+                    <a href="index.html">Latest letters</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">NEWSLETTER</div>
+                    <a href="https://newsletter.askloutos.com/subscribe">Subscribe</a>
+                    <a href="https://newsletter.askloutos.com">Past issues</a>
+                    <a href="https://newsletter.askloutos.com">newsletter.askloutos.com</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">SITE</div>
+                    <a href="about.html">About</a>
+                    <a href="mailto:kent.law0923@gmail.com">Contact</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© MMXXVI THE ASKLOUTOS LETTER</span>
+                <span>ASKLOUTOS.COM · Nº 42 AND COUNTING</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

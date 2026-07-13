@@ -1,0 +1,135 @@
+/* ============================================================
+   COMPONENTS — NAVIGATION
+   Sticky header, desktop bar + mobile hamburger (CSS-only toggle
+   via checkbox). Active link = crimson + 2px crimson underline.
+
+   <header class="site-header">
+     <div class="nav-inner">
+       <a class="brand" href="/">
+         <span class="brand-mark">A</span>
+         <span class="brand-word">Askloutos Letter<i>_</i></span>
+       </a>
+       <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+       <label for="nav-toggle" class="nav-toggle" aria-label="Menu"><span></span></label>
+       <nav class="nav-links">
+         <a class="nav-link is-active" href="/">Letters</a>
+         <a class="nav-link" href="/longevity">Longevity</a>
+         <a class="nav-link" href="/economic-history">Economic history</a>
+         <a class="nav-link" href="/about">About</a>
+         <a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com">Subscribe</a>
+       </nav>
+     </div>
+   </header>
+   ============================================================ */
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(244, 241, 234, 0.92);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.nav-inner {
+  max-width: var(--container-max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: 12px 16px;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) { .nav-inner { padding: 14px 32px; flex-wrap: nowrap; } }
+
+/* Brand lockup (pure HTML/CSS; SVGs in /assets also work) */
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-mark {
+  position: relative; width: 32px; height: 32px; flex: none;
+  background: var(--color-navy); border-radius: 5px;
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: 18px; color: var(--color-cream); line-height: 1;
+}
+.brand-mark::before {
+  content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 3px; height: 6px; background: var(--color-crimson);
+}
+.brand-word {
+  font-family: var(--font-mono); font-weight: var(--weight-bold);
+  font-size: 17px; letter-spacing: -0.01em; color: var(--color-navy); white-space: nowrap;
+}
+.brand-word i { font-style: normal; color: var(--color-crimson); }
+
+/* Hamburger — hidden from 768px up */
+.nav-toggle-input { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  cursor: pointer; background: transparent;
+}
+.nav-toggle span, .nav-toggle span::before, .nav-toggle span::after {
+  display: block; width: 18px; height: 2px; background: var(--color-navy);
+  transition: transform 200ms ease, opacity 150ms ease; content: '';
+}
+.nav-toggle span { position: relative; }
+.nav-toggle span::before { position: absolute; top: -6px; }
+.nav-toggle span::after  { position: absolute; top: 6px; }
+.nav-toggle-input:checked ~ .nav-toggle span { background: transparent; }
+.nav-toggle-input:checked ~ .nav-toggle span::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle-input:checked ~ .nav-toggle span::after  { transform: translateY(-6px) rotate(-45deg); }
+
+/* Links: vertical expanding menu on mobile */
+.nav-links { display: none; flex-direction: column; width: 100%; padding: 4px 0 20px; border-top: 1px solid var(--border-subtle); margin-top: 12px; }
+.nav-toggle-input:checked ~ .nav-links { display: flex; }
+.nav-link {
+  font-family: var(--font-mono); font-size: 16px; font-weight: var(--weight-medium);
+  letter-spacing: 0.02em; color: var(--color-navy); text-decoration: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 4px; border-bottom: 1px solid var(--border-subtle);
+  transition: color 150ms ease-out;
+}
+.nav-link::after { content: '→'; color: var(--color-slate-40); }
+.nav-link:hover { color: var(--color-crimson); }
+.nav-link.is-active { color: var(--color-crimson); }
+.nav-link.is-active::after { color: var(--color-crimson); }
+.nav-cta { margin-top: var(--space-4); width: 100%; }
+
+/* Desktop bar from 768px */
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+  .nav-links {
+    display: flex !important; flex-direction: row; align-items: center;
+    width: auto; padding: 0; border-top: none; margin-top: 0; gap: 28px;
+  }
+  .nav-link {
+    font-size: 13.5px; padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-link::after { content: none; }
+  .nav-link.is-active { border-bottom-color: var(--color-crimson); }
+  .nav-cta { margin-top: 0; width: auto; }
+}
+
+/* ---- Pagination ----
+   <nav class="pagination">
+     <a class="page-btn" href="#">←</a>
+     <a class="page-btn is-current" href="#">1</a> …
+     <a class="page-btn" href="#">→</a>
+   </nav> */
+.pagination { display: flex; align-items: center; gap: 4px; justify-content: center; }
+.page-btn {
+  min-width: 36px; height: 36px; padding: 0 10px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-mono); font-size: 13px; font-weight: var(--weight-medium);
+  color: var(--color-navy); text-decoration: none;
+  border: 1px solid transparent; border-radius: var(--radius);
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+.page-btn:hover { color: var(--color-crimson); border-color: var(--border); }
+.page-btn.is-current { background: var(--color-navy); color: var(--color-white); border-color: var(--color-navy); }
+.page-btn.is-disabled { color: var(--color-slate-40); pointer-events: none; }
+
+/* Load more (mobile alternative to pagination) */
+.load-more {
+  width: 100%; padding: 13px 0;
+  font-family: var(--font-mono); font-size: 14px; font-weight: var(--weight-medium);
+  letter-spacing: 0.02em; color: var(--color-navy);
+  background: transparent; border: 1px dashed var(--border); border-radius: var(--radius);
+  cursor: pointer; transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+.load-more:hover { color: var(--color-crimson); border-color: var(--color-crimson); }

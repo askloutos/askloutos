@@ -1,0 +1,24 @@
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   Mobile-first. Design reference widths: 375 / 768 / 1920.
+   Code breakpoints:
+     base            → phones           (design ref 375)
+     min-width 768px → tablet           (design ref 768)
+     min-width 1024px → desktop & up    (design ref 1920)
+   ============================================================ */
+
+/* Visibility helpers */
+.hide-mobile { display: none !important; }
+@media (min-width: 768px) {
+  .hide-mobile { display: revert !important; }
+  .hide-tablet-up { display: none !important; }
+}
+@media (min-width: 1024px) {
+  .hide-desktop { display: none !important; }
+  .show-desktop-only { display: revert !important; }
+}
+.show-desktop-only { display: none !important; }
+
+/* Text alignment per breakpoint */
+.text-center { text-align: center; }
+@media (min-width: 768px) { .md-text-center { text-align: center; } }

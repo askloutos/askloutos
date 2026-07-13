@@ -1,0 +1,101 @@
+/* ============================================================
+   COMPONENTS — FORMS
+   Input:
+     <label class="field">
+       <span class="field-label">Email</span>
+       <input class="input" type="email" placeholder="you@example.com">
+       <span class="field-hint">One letter a week. No spam.</span>
+     </label>
+   Search:  <div class="search"><span class="search-icon"></span><input …></div>
+   Tags:    <button class="tag is-active">All letters</button>
+   Signup (Beehiiv stand-in): .signup / .signup-dark — see snippet below.
+   ============================================================ */
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label {
+  font-family: var(--font-mono); font-size: 12px; font-weight: var(--weight-medium);
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-slate);
+}
+.field-hint { font-size: 12px; color: var(--color-slate); }
+
+.input {
+  width: 100%; box-sizing: border-box;
+  font-family: var(--font-body); font-size: 15px; color: var(--color-navy);
+  background: var(--color-white);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 11px 14px; outline: none;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+.input:focus { border-color: var(--color-crimson); box-shadow: 0 0 0 3px var(--focus-ring); }
+.input::placeholder { color: var(--color-slate); }
+
+/* Dark-section variant */
+.input-dark { background: var(--bg-dark-raised); color: var(--color-cream); border-color: var(--border-dark); }
+.input-dark:focus { border-color: var(--color-crimson); }
+
+/* Search field (mono placeholder, geometric magnifier) */
+.search {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--color-white);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 10px 14px;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+.search:focus-within { border-color: var(--color-crimson); box-shadow: 0 0 0 3px var(--focus-ring); }
+.search input {
+  font-family: var(--font-mono); font-size: 13px; color: var(--color-navy);
+  border: none; outline: none; background: transparent; flex: 1; min-width: 0;
+}
+.search-icon { position: relative; width: 13px; height: 13px; flex: none; }
+.search-icon::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 9px; height: 9px;
+  border: 1.5px solid var(--color-slate); border-radius: 50%; box-sizing: border-box;
+}
+.search-icon::after {
+  content: ''; position: absolute; bottom: 0; right: 0; width: 5px; height: 1.5px;
+  background: var(--color-slate); transform: rotate(45deg); transform-origin: right;
+}
+
+/* Category tag / filter chip */
+.tag {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-mono); font-size: 11px; font-weight: var(--weight-medium);
+  letter-spacing: 0.08em; text-transform: uppercase; line-height: 1;
+  padding: 6px 10px; border-radius: var(--radius-sm);
+  color: var(--color-slate); background: transparent;
+  border: 1px solid var(--border); cursor: pointer;
+  transition: color 150ms ease-out, border-color 150ms ease-out;
+}
+.tag:hover { color: var(--color-navy); border-color: var(--color-navy-60); }
+.tag.is-active { color: var(--color-white); background: var(--color-crimson); border-color: var(--color-crimson); }
+
+/* Beehiiv signup widget stand-in
+   <div class="signup signup-dark">
+     <div class="signup-kicker">THE ASKLOUTOS LETTER</div>
+     <div class="signup-heading">Get the letter</div>
+     <p class="signup-sub">One essay a week…</p>
+     <form class="signup-row">
+       <input class="input input-dark" type="email" placeholder="you@example.com">
+       <button class="btn btn-accent">Subscribe</button>
+     </form>
+     <div class="signup-legal">Delivered via Beehiiv · newsletter.askloutos.com</div>
+   </div>
+   .signup-row stacks on mobile, becomes a row ≥768px. */
+.signup-kicker {
+  font-family: var(--font-mono); font-weight: var(--weight-medium); font-size: 12px;
+  letter-spacing: 0.12em; color: var(--color-crimson); margin-bottom: 10px;
+}
+.signup-heading {
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: 26px; line-height: 1.2; color: var(--color-navy); margin-bottom: var(--space-2);
+}
+.signup-dark .signup-heading { color: var(--color-cream); }
+.signup-sub { font-size: 14px; line-height: 1.55; color: var(--color-slate); margin: 0 0 18px; }
+.signup-dark .signup-sub { color: var(--text-inverse-muted); }
+.signup-row { display: flex; flex-direction: column; gap: 10px; }
+@media (min-width: 768px) { .signup-row { flex-direction: row; } .signup-row .input { flex: 1; } }
+.signup-legal {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+  color: var(--color-slate); margin-top: var(--space-3);
+}
+.signup-dark .signup-legal { color: var(--text-inverse-muted); }

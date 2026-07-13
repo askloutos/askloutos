@@ -7,24 +7,70 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://newsletter.askloutos.com">Newsletter</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">A</span>
+                <span class="brand-word">Askloutos Letter<i>_</i></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+            <label for="nav-toggle" class="nav-toggle" aria-label="Menu"><span></span></label>
+            <nav class="nav-links">
+                <a class="nav-link" href="index.html">Letters</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link is-active" href="about.html">About</a>
+                <a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com">Subscribe</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h1>About Me</h1>
-        <p>I'm Kent Lawrence, a PGA Class A professional and CFA Level III candidate with a passion for wealth management and longevity research.</p>
-        <p><a href="index.html">← Back to Home</a></p>
+        <section class="section">
+            <div class="container-narrow">
+                <div class="kicker">ABOUT</div>
+                <h1>About the letter</h1>
+                <p>I'm Kent Lawrence, a PGA Class A professional and CFA Level III candidate with a passion for wealth management and longevity research.</p>
+                <p>The Askloutos Letter is where those interests meet — a weekly essay on how longevity and economic history shape the way we save, invest, and grow old.</p>
+                <div class="mt-6">
+                    <a class="btn btn-secondary" href="index.html">← Back to letters</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Kent Lawrence. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand brand-inverse" href="index.html">
+                        <span class="brand-mark">A</span>
+                        <span class="brand-word">Askloutos Letter<i>_</i></span>
+                    </a>
+                    <p>Essays on longevity and economic history. One letter a week.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">READ</div>
+                    <a href="index.html">Latest letters</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">NEWSLETTER</div>
+                    <a href="https://newsletter.askloutos.com/subscribe">Subscribe</a>
+                    <a href="https://newsletter.askloutos.com">Past issues</a>
+                    <a href="https://newsletter.askloutos.com">newsletter.askloutos.com</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">SITE</div>
+                    <a href="about.html">About</a>
+                    <a href="mailto:kent.law0923@gmail.com">Contact</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© MMXXVI THE ASKLOUTOS LETTER</span>
+                <span>ASKLOUTOS.COM · Nº 42 AND COUNTING</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

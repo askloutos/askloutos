@@ -1,0 +1,99 @@
+/* ============================================================
+   COMPONENTS — CARDS
+   Blog post card:
+     <a class="post-card" href="…">
+       <div class="post-card-image"><span>article image</span></div>
+       <div class="post-card-body">
+         <div class="post-card-kicker">Economic history</div>
+         <div class="post-card-title">Why the Dutch outlived their creditors</div>
+         <p class="post-card-excerpt">Annuities, tontines…</p>
+         <div class="meta">12 JUL 2026 <span>/</span> A. LOUTOS <span>/</span> 9 MIN</div>
+       </div>
+     </a>
+   Add .post-card-horizontal for the list layout (image left) —
+   it activates from 768px up; below that it stays stacked.
+   Generic surface: .card
+   ============================================================ */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+  padding: var(--space-5);
+}
+
+.post-card {
+  display: flex; flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-subtle);
+  overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: border-color 150ms ease-out, box-shadow 150ms ease-out;
+}
+.post-card:hover { border-color: var(--border); box-shadow: var(--shadow-medium); color: inherit; }
+.post-card:hover .post-card-title { color: var(--color-crimson); }
+
+/* Striped placeholder — swap for <img> in production:
+   <img class="post-card-image" src="…" alt="…"> works too. */
+.post-card-image {
+  aspect-ratio: 16 / 9; width: 100%; object-fit: cover;
+  background: repeating-linear-gradient(-45deg, var(--color-cream-dark) 0 10px, var(--color-cream) 10px 20px);
+  border-bottom: 1px solid var(--border-subtle);
+  display: grid; place-items: center;
+}
+.post-card-image > span {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  color: var(--color-slate); background: var(--color-paper);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-sm);
+  padding: 4px 8px;
+}
+
+.post-card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+.post-card-kicker {
+  font-family: var(--font-mono); font-size: 11px; font-weight: var(--weight-medium);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-crimson);
+}
+.post-card-title {
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: 18px; line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--color-navy);
+  transition: color 150ms ease-out;
+}
+.post-card-excerpt { margin: 0; font-size: 14px; line-height: 1.55; color: var(--color-slate); }
+
+/* Horizontal (list) layout from tablet up */
+@media (min-width: 768px) {
+  .post-card-horizontal { display: grid; grid-template-columns: 220px 1fr; }
+  .post-card-horizontal .post-card-image {
+    aspect-ratio: 4 / 3; height: 100%;
+    border-bottom: none; border-right: 1px solid var(--border-subtle);
+  }
+}
+
+/* Sidebar block (blog):
+   <div class="sidebar-block"><div class="sidebar-title">CATEGORIES</div>…</div> */
+.sidebar-block {
+  background: var(--bg-card); border: 1px solid var(--border-subtle);
+  border-radius: var(--radius); box-shadow: var(--shadow-subtle); padding: var(--space-5);
+}
+.sidebar-title {
+  font-family: var(--font-mono); font-size: 11px; font-weight: var(--weight-medium);
+  letter-spacing: 0.14em; color: var(--color-slate); margin-bottom: var(--space-4);
+}
+
+/* Compact recent-post link list inside sidebar */
+.recent-list { display: flex; flex-direction: column; }
+.recent-list a {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 10px 0; text-decoration: none;
+  border-top: 1px solid var(--border-subtle);
+}
+.recent-list a:first-child { border-top: none; }
+.recent-list a b {
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: 13.5px; line-height: 1.35; color: var(--color-navy);
+}
+.recent-list a:hover b { color: var(--color-crimson); }

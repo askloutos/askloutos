@@ -1,0 +1,62 @@
+/* ============================================================
+   COMPONENTS — HERO
+   <section class="hero section section-rule">
+     <div class="container hero-grid">
+       <div class="hero-copy">
+         <div class="kicker">A WEEKLY LETTER · ISSUE Nº 42</div>
+         <h1 class="hero-title">How people, and their money, learned to grow old</h1>
+         <p class="hero-lede">The Askloutos Letter traces longevity…</p>
+         <div class="hero-actions">
+           <a class="btn btn-accent btn-lg" href="https://newsletter.askloutos.com">Subscribe free</a>
+           <a class="btn btn-secondary btn-lg" href="#latest">Read the latest →</a>
+         </div>
+         <div class="meta mt-2">EVERY SUNDAY <span>/</span> 5-MINUTE READ <span>/</span> NO SPAM</div>
+       </div>
+       <div class="hero-media"><span>hero image: archival engraving</span></div>
+     </div>
+   </section>
+   Media column appears only ≥1024px. Buttons stack on mobile.
+   ============================================================ */
+
+.hero-grid { display: flex; flex-direction: column; gap: var(--space-6); align-items: center; }
+@media (min-width: 1024px) {
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-8); }
+}
+
+.hero-copy { display: flex; flex-direction: column; gap: var(--space-4); }
+.hero-title {
+  margin: 0;
+  font-family: var(--font-mono); font-weight: var(--weight-semibold);
+  font-size: var(--h1-size); line-height: var(--h1-line); letter-spacing: var(--h1-tracking);
+  color: var(--color-navy);
+}
+.hero-lede { margin: 0; font-size: 15px; line-height: 1.6; color: var(--color-slate); max-width: 560px; }
+@media (min-width: 768px) { .hero-lede { font-size: 17px; } }
+
+.hero-actions { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-2); }
+.hero-actions .btn { width: 100%; }
+@media (min-width: 768px) {
+  .hero-actions { flex-direction: row; }
+  .hero-actions .btn { width: auto; }
+}
+
+/* Striped placeholder — replace with <img class="hero-media"> */
+.hero-media {
+  display: none; aspect-ratio: 4 / 3; width: 100%;
+  border-radius: var(--radius); border: 1px solid var(--border-subtle);
+  background: repeating-linear-gradient(-45deg, var(--color-cream-dark) 0 10px, var(--color-cream) 10px 20px);
+  place-items: center;
+}
+@media (min-width: 1024px) { .hero-media { display: grid; } }
+.hero-media > span {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+  color: var(--color-slate); background: var(--color-paper);
+  border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 4px 8px;
+}
+
+/* Dark signup band wrapping the Beehiiv widget:
+   <section class="signup-band"><div class="signup-band-inner">…signup…</div></section> */
+.signup-band { background: var(--bg-dark); }
+.signup-band-inner { max-width: 560px; margin: 0 auto; padding: var(--space-7) var(--space-4); }
+@media (min-width: 768px) { .signup-band-inner { padding: 72px var(--space-6); text-align: center; } }
+@media (min-width: 1024px) { .signup-band-inner { max-width: 720px; } }

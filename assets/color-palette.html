@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Askloutos Letter — Color palette</title>
+<link rel="stylesheet" href="../css/tokens.css">
+<style>
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+  .mono { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); letter-spacing: 0.02em; }
+  .grid7 { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 20px; }
+  .pal-chip { height: 88px; border-radius: var(--radius); }
+  .pal-chip.sm { height: 48px; }
+  .pal-name { font-family: var(--font-mono); font-weight: 600; font-size: 14px; margin-top: 10px; color: var(--text-primary); }
+  .pal-code { margin-top: 4px; line-height: 1.6; }
+  .pal-use { font-size: 12.5px; line-height: 1.5; color: var(--text-secondary); margin-top: 6px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-align: left; color: var(--text-secondary); padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); font-size: 13.5px; vertical-align: middle; }
+  .chip { display: inline-grid; place-items: center; width: 52px; height: 36px; border-radius: var(--radius-sm); font-family: var(--font-mono); font-weight: 600; }
+  .badge { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: #1F6E43; }
+  .badge-warn { color: var(--color-crimson-dark); }
+  .darknote { background: var(--bg-dark); border-radius: var(--radius); padding: 24px; margin-top: 12px; }
+  .darknote h3 { color: var(--text-inverse); margin: 0 0 8px; }
+  .darknote p { color: var(--text-inverse-muted); font-size: 13.5px; margin: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">THE ASKLOUTOS LETTER · DESIGN SYSTEM</div>
+  <h1 style="font-size:32px;">Color palette</h1>
+
+  <h2 style="margin-top:40px;">Base palette</h2>
+  <div class="grid7"><div class="pal">
+    <div class="pal-chip" style="background:#F4F1EA;border:1px solid var(--border-subtle);"></div>
+    <div class="pal-name">Cream</div>
+    <div class="mono pal-code">#F4F1EA · rgb(244, 241, 234)<br>--color-cream</div>
+    <div class="pal-use">Page background. Never place body copy on anything darker without switching to inverse text.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#002147;"></div>
+    <div class="pal-name">Oxford Navy</div>
+    <div class="mono pal-code">#002147 · rgb(0, 33, 71)<br>--color-navy</div>
+    <div class="pal-use">Primary ink: headings, body, primary buttons, brand mark.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#708090;"></div>
+    <div class="pal-name">Slate</div>
+    <div class="mono pal-code">#708090 · rgb(112, 128, 144)<br>--color-slate</div>
+    <div class="pal-use">Secondary text, metadata, hairline accents. 16px minimum on cream.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#C60000;"></div>
+    <div class="pal-name">Crimson</div>
+    <div class="mono pal-code">#C60000 · rgb(198, 0, 0)<br>--color-crimson</div>
+    <div class="pal-use">Accent — links, active states, the one CTA per view. Never body copy.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#0F1419;"></div>
+    <div class="pal-name">Dark</div>
+    <div class="mono pal-code">#0F1419 · rgb(15, 20, 25)<br>--color-dark</div>
+    <div class="pal-use">Dark sections: signup band, footer. Pair with cream/muted inverse text.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#FBFAF6;border:1px solid var(--border-subtle);"></div>
+    <div class="pal-name">Paper</div>
+    <div class="mono pal-code">#FBFAF6 · rgb(251, 250, 246)<br>--color-paper</div>
+    <div class="pal-use">Card surface on cream.</div>
+  </div>
+<div class="pal">
+    <div class="pal-chip" style="background:#FFFFFF;border:1px solid var(--border-subtle);"></div>
+    <div class="pal-name">White</div>
+    <div class="mono pal-code">#FFFFFF · rgb(255, 255, 255)<br>--color-white</div>
+    <div class="pal-use">Input backgrounds, text on crimson.</div>
+  </div></div>
+
+  <h2 style="margin-top:48px;">Tints &amp; shades</h2>
+  <div class="grid7"><div class="pal"><div class="pal-chip sm" style="background:#1A3859;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#1A3859<br>--color-navy-80</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#4D6480;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#4D6480<br>--color-navy-60</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#E0E4E9;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#E0E4E9<br>--color-navy-12</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#C5CCD3;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#C5CCD3<br>--color-slate-40</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#E2E6E9;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#E2E6E9<br>--color-slate-20</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#A30000;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#A30000<br>--color-crimson-dark</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#EAE6DC;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#EAE6DC<br>--color-cream-dark</div></div>
+<div class="pal"><div class="pal-chip sm" style="background:#1A2129;border:1px solid var(--border-subtle);"></div><div class="mono pal-code">#1A2129<br>--color-dark-2</div></div></div>
+
+  <h2 style="margin-top:48px;">Contrast (WCAG 2.1)</h2>
+  <table>
+    <thead><tr><th>SAMPLE</th><th>PAIR</th><th>HEX</th><th>RATIO</th><th>LEVEL</th><th>USE FOR</th></tr></thead>
+    <tbody><tr>
+    <td><span class="chip" style="color:#002147;background:#F4F1EA;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Navy on Cream</td>
+    <td class="mono">#002147 / #F4F1EA</td>
+    <td class="mono">14.23 : 1</td>
+    <td><span class="badge ">AAA</span></td>
+    <td>Body text, headings</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#708090;background:#F4F1EA;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Slate on Cream</td>
+    <td class="mono">#708090 / #F4F1EA</td>
+    <td class="mono">3.59 : 1</td>
+    <td><span class="badge badge-warn">AA large</span></td>
+    <td>Secondary text — 16px+ only</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#C60000;background:#F4F1EA;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Crimson on Cream</td>
+    <td class="mono">#C60000 / #F4F1EA</td>
+    <td class="mono">5.47 : 1</td>
+    <td><span class="badge ">AA</span></td>
+    <td>Links, kickers</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#FFFFFF;background:#C60000;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">White on Crimson</td>
+    <td class="mono">#FFFFFF / #C60000</td>
+    <td class="mono">6.17 : 1</td>
+    <td><span class="badge ">AA</span></td>
+    <td>Accent button label</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#F4F1EA;background:#002147;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Cream on Navy</td>
+    <td class="mono">#F4F1EA / #002147</td>
+    <td class="mono">14.23 : 1</td>
+    <td><span class="badge ">AAA</span></td>
+    <td>Primary button label</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#F4F1EA;background:#0F1419;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Cream on Dark</td>
+    <td class="mono">#F4F1EA / #0F1419</td>
+    <td class="mono">16.41 : 1</td>
+    <td><span class="badge ">AAA</span></td>
+    <td>Dark-section headings</td>
+  </tr>
+<tr>
+    <td><span class="chip" style="color:#8B98A5;background:#0F1419;border:1px solid var(--border-subtle);">Aa</span></td>
+    <td class="mono">Muted on Dark</td>
+    <td class="mono">#8B98A5 / #0F1419</td>
+    <td class="mono">6.29 : 1</td>
+    <td><span class="badge ">AA</span></td>
+    <td>Dark-section support copy</td>
+  </tr></tbody>
+  </table>
+  <p class="mono" style="margin-top:12px;">AA large = 18px+/14px-bold only. Slate on cream fails body-size AA — reserve slate for 16px+ secondary text or metadata, never long-form copy.</p>
+
+  <h2 style="margin-top:48px;">Dark sections</h2>
+  <div class="darknote">
+    <h3>There is no dark mode — there are dark sections.</h3>
+    <p>#0F1419 is used for the signup band and footer only. Text on it: cream (--text-inverse) for headings, #8B98A5 (--text-inverse-muted) for support copy, crimson for the CTA. Inputs use --color-dark-2 (#1A2129).</p>
+  </div>
+</div>
+</body>
+</html>

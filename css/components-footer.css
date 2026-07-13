@@ -1,0 +1,58 @@
+/* ============================================================
+   COMPONENTS — FOOTER
+   <footer class="site-footer">
+     <div class="footer-inner">
+       <div class="footer-grid">
+         <div class="footer-brand">
+           <a class="brand brand-inverse" href="/">…same brand markup…</a>
+           <p>Essays on longevity and economic history. One letter a week.</p>
+         </div>
+         <div class="footer-col">
+           <div class="footer-col-title">READ</div>
+           <a href="#">Latest letters</a> …
+         </div>
+       </div>
+       <div class="footer-legal">
+         <span>© MMXXVI THE ASKLOUTOS LETTER</span>
+         <span>ASKLOUTOS.COM · Nº 42 AND COUNTING</span>
+       </div>
+     </div>
+   </footer>
+   Single column on mobile → brand + 3 columns ≥768px.
+   ============================================================ */
+
+.site-footer { background: var(--bg-dark); color: var(--text-inverse); }
+.footer-inner { max-width: var(--container-max); margin: 0 auto; padding: 40px 20px 28px; }
+@media (min-width: 768px) { .footer-inner { padding: 56px 32px 32px; } }
+
+.footer-grid { display: flex; flex-direction: column; gap: var(--space-6); }
+@media (min-width: 768px) {
+  .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: var(--space-7); }
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 14px; }
+.footer-brand p { margin: 0; font-size: 13px; line-height: 1.6; color: var(--text-inverse-muted); max-width: 280px; }
+
+/* Inverse brand lockup on dark */
+.brand-inverse .brand-mark { background: var(--color-cream); color: var(--color-navy); }
+.brand-inverse .brand-word { color: var(--color-cream); }
+
+.footer-col { display: flex; flex-direction: column; gap: 2px; }
+.footer-col-title {
+  font-family: var(--font-mono); font-size: 11px; font-weight: var(--weight-medium);
+  letter-spacing: 0.14em; color: var(--color-slate); margin-bottom: var(--space-2);
+}
+.footer-col a {
+  font-size: 13.5px; line-height: 2; color: var(--text-inverse-muted);
+  text-decoration: none; transition: color 150ms ease-out;
+}
+.footer-col a:hover { color: var(--color-cream); }
+
+.footer-legal {
+  border-top: 1px solid var(--border-dark);
+  margin-top: var(--space-6); padding-top: 20px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3);
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--text-inverse-muted);
+}
+@media (min-width: 768px) { .footer-legal { margin-top: var(--space-7); } }

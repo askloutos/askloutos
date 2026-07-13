@@ -7,24 +7,133 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://newsletter.askloutos.com">Newsletter</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">A</span>
+                <span class="brand-word">Askloutos Letter<i>_</i></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+            <label for="nav-toggle" class="nav-toggle" aria-label="Menu"><span></span></label>
+            <nav class="nav-links">
+                <a class="nav-link is-active" href="index.html">Letters</a>
+                <a class="nav-link" href="resources.html">Resources</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com">Subscribe</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <h1>The Askloutos Letter</h1>
-        <p>Welcome to my longevity & economic history resource.</p>
-        <a href="https://newsletter.askloutos.com/subscribe" class="btn">Subscribe</a>
+        <!-- Hero -->
+        <section class="hero section section-rule">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <div class="kicker">A WEEKLY LETTER · ISSUE Nº 42</div>
+                    <h1 class="hero-title">How people, and their money, learned to grow old</h1>
+                    <p class="hero-lede">The Askloutos Letter traces longevity through the ledgers of economic history — annuities, plagues, pensions, and the long bet on a longer life.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-accent btn-lg" href="https://newsletter.askloutos.com/subscribe">Subscribe free</a>
+                        <a class="btn btn-secondary btn-lg" href="#latest">Read the latest →</a>
+                    </div>
+                    <div class="meta mt-2">EVERY SUNDAY <span>/</span> 5-MINUTE READ <span>/</span> NO SPAM</div>
+                </div>
+                <div class="hero-media"><span>hero image: archival engraving</span></div>
+            </div>
+        </section>
+
+        <!-- Latest letters -->
+        <section id="latest" class="section">
+            <div class="container">
+                <div class="flex items-baseline justify-between mb-6">
+                    <h2 class="m-0">Latest letters</h2>
+                    <a class="kicker" href="resources.html">Browse the archive →</a>
+                </div>
+
+                <div class="card-grid">
+                    <a class="post-card" href="https://newsletter.askloutos.com">
+                        <div class="post-card-image"><span>engraving: Amsterdam exchange</span></div>
+                        <div class="post-card-body">
+                            <div class="post-card-kicker">Economic history</div>
+                            <div class="post-card-title">Why the Dutch outlived their creditors</div>
+                            <p class="post-card-excerpt">Annuities, tontines, and the first actuarial tables — how 17th-century finance accidentally invented longevity science.</p>
+                            <div class="meta">12 JUL 2026 <span>/</span> A. LOUTOS <span>/</span> 9 MIN</div>
+                        </div>
+                    </a>
+
+                    <a class="post-card" href="https://newsletter.askloutos.com">
+                        <div class="post-card-image"><span>photo: Sardinian hillside</span></div>
+                        <div class="post-card-body">
+                            <div class="post-card-kicker">Longevity</div>
+                            <div class="post-card-title">The village that forgot to die</div>
+                            <p class="post-card-excerpt">What Sardinian parish ledgers reveal about the economics of extreme old age — and what they hide.</p>
+                            <div class="meta">05 JUL 2026 <span>/</span> A. LOUTOS <span>/</span> 7 MIN</div>
+                        </div>
+                    </a>
+
+                    <a class="post-card" href="https://newsletter.askloutos.com">
+                        <div class="post-card-image"><span>chart: tontine payouts, 1693</span></div>
+                        <div class="post-card-body">
+                            <div class="post-card-kicker">Economic history</div>
+                            <div class="post-card-title">Tontines: the retirement plan too morbid to fail</div>
+                            <p class="post-card-excerpt">The investment vehicle that paid you more as your co-investors died — and why regulators finally killed it.</p>
+                            <div class="meta">28 JUN 2026 <span>/</span> A. LOUTOS <span>/</span> 11 MIN</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark signup band (Beehiiv stand-in) -->
+        <section class="signup-band">
+            <div class="signup-band-inner">
+                <div class="signup signup-dark">
+                    <div class="signup-kicker">THE ASKLOUTOS LETTER</div>
+                    <div class="signup-heading">Get the letter</div>
+                    <p class="signup-sub">One essay a week on longevity and economic history. Read by curious people. Free, forever.</p>
+                    <form class="signup-row" action="https://newsletter.askloutos.com/subscribe" method="get">
+                        <input class="input input-dark" type="email" name="email" placeholder="you@example.com" aria-label="Email address">
+                        <button class="btn btn-accent" type="submit">Subscribe</button>
+                    </form>
+                    <div class="signup-legal">Delivered via Beehiiv · newsletter.askloutos.com · unsubscribe anytime</div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Kent Lawrence. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="brand brand-inverse" href="index.html">
+                        <span class="brand-mark">A</span>
+                        <span class="brand-word">Askloutos Letter<i>_</i></span>
+                    </a>
+                    <p>Essays on longevity and economic history. One letter a week.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">READ</div>
+                    <a href="index.html">Latest letters</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">NEWSLETTER</div>
+                    <a href="https://newsletter.askloutos.com/subscribe">Subscribe</a>
+                    <a href="https://newsletter.askloutos.com">Past issues</a>
+                    <a href="https://newsletter.askloutos.com">newsletter.askloutos.com</a>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-title">SITE</div>
+                    <a href="about.html">About</a>
+                    <a href="mailto:kent.law0923@gmail.com">Contact</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <span>© MMXXVI THE ASKLOUTOS LETTER</span>
+                <span>ASKLOUTOS.COM · Nº 42 AND COUNTING</span>
+            </div>
+        </div>
     </footer>
 </body>
 </html>

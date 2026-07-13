@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Askloutos Letter — Component reference</title>
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/components-buttons.css">
+<link rel="stylesheet" href="../css/components-cards.css">
+<link rel="stylesheet" href="../css/components-forms.css">
+<link rel="stylesheet" href="../css/components-navigation.css">
+<link rel="stylesheet" href="../css/components-hero.css">
+<link rel="stylesheet" href="../css/components-footer.css">
+<link rel="stylesheet" href="../css/layout-grid.css">
+<link rel="stylesheet" href="../css/layout-flex.css">
+<link rel="stylesheet" href="../css/layout-spacing.css">
+<link rel="stylesheet" href="../css/responsive-breakpoints.css">
+<style>
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 96px; }
+  .spec { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-secondary); margin: 8px 0 0; }
+  .rule { border: none; border-top: 1px solid var(--border-subtle); margin: 48px 0; }
+  .code { font-family: var(--font-mono); font-size: 12px; line-height: 1.7; background: var(--bg-dark); color: var(--text-inverse); border-radius: var(--radius); padding: 14px 18px; overflow-x: auto; margin: 10px 0 0; }
+  .snip summary { font-family: var(--font-mono); font-size: 12px; color: var(--color-crimson); cursor: pointer; margin-top: 12px; }
+  .demo { border: 1px dashed var(--border); border-radius: var(--radius); padding: 24px; margin-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">THE ASKLOUTOS LETTER · DESIGN SYSTEM</div>
+  <h1 style="font-size:32px;">Component reference</h1>
+  <p>Every component as live HTML using the exported CSS. Expand a snippet, copy, paste. Resize this window to see responsive behavior — breakpoints at 768px and 1024px, mobile-first.</p>
+
+  <hr class="rule">
+  <h2>Buttons — components-buttons.css</h2>
+  <div class="demo flex flex-wrap items-center gap-3">
+    <button class="btn">Primary</button>
+    <button class="btn btn-accent">Subscribe</button>
+    <button class="btn btn-secondary">Browse the archive →</button>
+    <button class="btn btn-ghost">Ghost</button>
+    <button class="btn" disabled>Disabled</button>
+    <button class="btn btn-sm">Small</button>
+    <button class="btn btn-lg">Large</button>
+    <span style="background:var(--bg-dark);border-radius:var(--radius);padding:8px 10px;"><button class="btn btn-inverse btn-sm">On dark</button></span>
+  </div>
+  <p class="spec">HOVER: darkens · ACTIVE: translateY(1px) · FOCUS: crimson ring · ONE .btn-accent PER VIEW · loading: add .is-disabled + swap label for "Sending…"</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;a class="btn btn-accent" href="https://newsletter.askloutos.com"&gt;Subscribe&lt;/a&gt;
+&lt;button class="btn btn-secondary btn-lg"&gt;Browse the archive →&lt;/button&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Post cards — components-cards.css</h2>
+  <div class="demo card-grid">
+    <a class="post-card" href="#">
+      <div class="post-card-image"><span>article image</span></div>
+      <div class="post-card-body">
+        <div class="post-card-kicker">Economic history</div>
+        <div class="post-card-title">Why the Dutch outlived their creditors</div>
+        <p class="post-card-excerpt">Annuities, tontines, and the first actuarial tables.</p>
+        <div class="meta">12 JUL 2026 <span>/</span> A. LOUTOS <span>/</span> 9 MIN</div>
+      </div>
+    </a>
+    <a class="post-card" href="#">
+      <div class="post-card-image"><span>article image</span></div>
+      <div class="post-card-body">
+        <div class="post-card-kicker">Longevity</div>
+        <div class="post-card-title">The village that forgot to die</div>
+        <p class="post-card-excerpt">What Sardinian parish ledgers reveal about extreme old age.</p>
+        <div class="meta">05 JUL 2026 <span>/</span> A. LOUTOS <span>/</span> 7 MIN</div>
+      </div>
+    </a>
+  </div>
+  <div class="demo">
+    <a class="post-card post-card-horizontal" href="#">
+      <div class="post-card-image"><span>article image</span></div>
+      <div class="post-card-body">
+        <div class="post-card-kicker">Economic history</div>
+        <div class="post-card-title">Tontines: the retirement plan too morbid to fail</div>
+        <p class="post-card-excerpt">The investment vehicle that paid you more as your co-investors died.</p>
+        <div class="meta">28 JUN 2026 <span>/</span> A. LOUTOS <span>/</span> 11 MIN</div>
+      </div>
+    </a>
+  </div>
+  <p class="spec">GRID: .card-grid = 1 → 2 (768) → 3 (1024) COLUMNS · HORIZONTAL VARIANT ACTIVATES ≥768 · HOVER: border + shadow lift, title → crimson · swap the placeholder div for &lt;img class="post-card-image"&gt;</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;a class="post-card" href="/letters/dutch-creditors"&gt;
+  &lt;div class="post-card-image"&gt;&lt;span&gt;article image&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="post-card-body"&gt;
+    &lt;div class="post-card-kicker"&gt;Economic history&lt;/div&gt;
+    &lt;div class="post-card-title"&gt;Why the Dutch outlived their creditors&lt;/div&gt;
+    &lt;p class="post-card-excerpt"&gt;Annuities, tontines, and the first actuarial tables.&lt;/p&gt;
+    &lt;div class="meta"&gt;12 JUL 2026 &lt;span&gt;/&lt;/span&gt; A. LOUTOS &lt;span&gt;/&lt;/span&gt; 9 MIN&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/a&gt;
+&lt;!-- List layout (image left, ≥768px): add .post-card-horizontal --&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Forms — components-forms.css</h2>
+  <div class="demo grid">
+    <div class="col-12 col-md-6">
+      <label class="field">
+        <span class="field-label">Email</span>
+        <input class="input" type="email" placeholder="you@example.com">
+        <span class="field-hint">One letter a week. No spam.</span>
+      </label>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="field">
+        <span class="field-label">Search</span>
+        <div class="search"><span class="search-icon"></span><input type="search" placeholder="Search the archive…"></div>
+      </label>
+    </div>
+    <div class="col-12 flex flex-wrap gap-2">
+      <button class="tag is-active">All letters</button>
+      <button class="tag">Longevity</button>
+      <button class="tag">Economic history</button>
+      <button class="tag">Archive</button>
+    </div>
+  </div>
+  <p class="spec">FOCUS: crimson border + 3px ring · TAGS: .is-active = crimson fill</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;label class="field"&gt;
+  &lt;span class="field-label"&gt;Email&lt;/span&gt;
+  &lt;input class="input" type="email" placeholder="you@example.com"&gt;
+&lt;/label&gt;
+
+&lt;div class="search"&gt;&lt;span class="search-icon"&gt;&lt;/span&gt;
+  &lt;input type="search" placeholder="Search the archive…"&gt;&lt;/div&gt;
+
+&lt;button class="tag is-active"&gt;All letters&lt;/button&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Signup widget (Beehiiv) — components-forms.css + components-hero.css</h2>
+  <div style="margin-top:14px;border-radius:var(--radius);overflow:hidden;">
+    <section class="signup-band">
+  <div class="signup-band-inner" style="text-align:left">
+    <div class="signup signup-dark">
+      <div class="signup-kicker">THE ASKLOUTOS LETTER</div>
+      <div class="signup-heading">Get the letter</div>
+      <p class="signup-sub">One essay a week on longevity and economic history. Free.</p>
+      <form class="signup-row">
+        <input class="input input-dark" type="email" placeholder="you@example.com">
+        <button class="btn btn-accent" type="submit">Subscribe</button>
+      </form>
+      <div class="signup-legal">Delivered via Beehiiv · newsletter.askloutos.com · unsubscribe anytime</div>
+    </div>
+  </div>
+</section>
+  </div>
+  <p class="spec">FIELD ROW STACKS ON MOBILE, INLINE ≥768 · REPLACE THE FORM WITH THE REAL BEEHIIV EMBED WHEN READY — KEEP THE .signup WRAPPER FOR THE FRAME</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;section class="signup-band"&gt;
+  &lt;div class="signup-band-inner"&gt;
+    &lt;div class="signup signup-dark"&gt;
+      &lt;div class="signup-kicker"&gt;THE ASKLOUTOS LETTER&lt;/div&gt;
+      &lt;div class="signup-heading"&gt;Get the letter&lt;/div&gt;
+      &lt;p class="signup-sub"&gt;One essay a week on longevity and economic history. Free.&lt;/p&gt;
+      &lt;form class="signup-row"&gt;
+        &lt;input class="input input-dark" type="email" placeholder="you@example.com"&gt;
+        &lt;button class="btn btn-accent" type="submit"&gt;Subscribe&lt;/button&gt;
+      &lt;/form&gt;
+      &lt;div class="signup-legal"&gt;Delivered via Beehiiv · newsletter.askloutos.com · unsubscribe anytime&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Navigation — components-navigation.css</h2>
+  <div style="border:1px solid var(--border-subtle);border-radius:var(--radius);overflow:hidden;margin-top:14px;">
+    <header class="site-header" style="position:relative">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">A</span>
+      <span class="brand-word">Askloutos Letter<i>_</i></span>
+    </a>
+    <input type="checkbox" id="nav-demo" class="nav-toggle-input">
+    <label for="nav-demo" class="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="nav-links">
+      <a class="nav-link is-active" href="/">Letters</a>
+      <a class="nav-link" href="/longevity">Longevity</a>
+      <a class="nav-link" href="/economic-history">Economic history</a>
+      <a class="nav-link" href="/about">About</a>
+      <a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com">Subscribe</a>
+    </nav>
+  </div>
+</header>
+  </div>
+  <p class="spec">STICKY + CREAM 92% BLUR · &lt;768: HAMBURGER (CSS-ONLY CHECKBOX TOGGLE, MORPHS TO ✕) WITH VERTICAL MENU + FULL-WIDTH CTA · ≥768: HORIZONTAL BAR, ACTIVE = CRIMSON + 2PX UNDERLINE · CTA LINKS TO newsletter.askloutos.com</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;header class="site-header"&gt;
+  &lt;div class="nav-inner"&gt;
+    &lt;a class="brand" href="/"&gt;
+      &lt;span class="brand-mark"&gt;A&lt;/span&gt;
+      &lt;span class="brand-word"&gt;Askloutos Letter&lt;i&gt;_&lt;/i&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;input type="checkbox" id="nav-toggle" class="nav-toggle-input"&gt;
+    &lt;label for="nav-toggle" class="nav-toggle" aria-label="Menu"&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;
+    &lt;nav class="nav-links"&gt;
+      &lt;a class="nav-link is-active" href="/"&gt;Letters&lt;/a&gt;
+      &lt;a class="nav-link" href="/longevity"&gt;Longevity&lt;/a&gt;
+      &lt;a class="nav-link" href="/economic-history"&gt;Economic history&lt;/a&gt;
+      &lt;a class="nav-link" href="/about"&gt;About&lt;/a&gt;
+      &lt;a class="btn btn-accent btn-sm nav-cta" href="https://newsletter.askloutos.com"&gt;Subscribe&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Pagination &amp; load more — components-navigation.css</h2>
+  <div class="demo flex-col gap-4">
+    <nav class="pagination">
+      <a class="page-btn is-disabled" href="#">←</a>
+      <a class="page-btn is-current" href="#">1</a>
+      <a class="page-btn" href="#">2</a>
+      <a class="page-btn" href="#">3</a>
+      <a class="page-btn" href="#">4</a>
+      <a class="page-btn" href="#">→</a>
+    </nav>
+    <button class="load-more">Load more letters ↓</button>
+  </div>
+  <p class="spec">PAGINATION FOR ≥768 · .load-more IS THE MOBILE PATTERN</p>
+<details class="snip"><summary>HTML snippet</summary><pre class="code">&lt;nav class="pagination"&gt;
+  &lt;a class="page-btn is-disabled" href="#"&gt;←&lt;/a&gt;
+  &lt;a class="page-btn is-current" href="#"&gt;1&lt;/a&gt;
+  &lt;a class="page-btn" href="#"&gt;2&lt;/a&gt;
+  &lt;a class="page-btn" href="#"&gt;→&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;button class="load-more"&gt;Load more letters ↓&lt;/button&gt;</pre></details>
+
+  <hr class="rule">
+  <h2>Footer — components-footer.css</h2>
+  <div style="border-radius:var(--radius);overflow:hidden;margin-top:14px;">
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand brand-inverse" href="/"><span class="brand-mark">A</span><span class="brand-word">Askloutos Letter<i>_</i></span></a>
+            <p>Essays on longevity and economic history. One letter a week.</p>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">READ</div>
+            <a href="#">Latest letters</a><a href="#">Longevity</a><a href="#">Economic history</a><a href="#">Archive</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">NEWSLETTER</div>
+            <a href="#">Subscribe</a><a href="#">Past issues</a><a href="https://newsletter.askloutos.com">newsletter.askloutos.com</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-title">SITE</div>
+            <a href="#">About</a><a href="#">Contact</a><a href="#">RSS</a>
+          </div>
+        </div>
+        <div class="footer-legal"><span>© MMXXVI THE ASKLOUTOS LETTER</span><span>ASKLOUTOS.COM · Nº 42 AND COUNTING</span></div>
+      </div>
+    </footer>
+  </div>
+  <p class="spec">SINGLE COLUMN &lt;768 → BRAND + 3 COLUMNS ≥768</p>
+</div>
+</body>
+</html>
