@@ -103,6 +103,12 @@
 
 /* ---- Base element styles ----
    <body class="…"> gets cream page + Inter automatically. */
+
+/* Global border-box so width:100% + padding never overflows the viewport
+   (prevents the mobile "loads zoomed in" symptom on full-width buttons). */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--bg-page);
@@ -111,12 +117,15 @@ body {
   font-size: var(--body-size);
   line-height: var(--body-line);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+img, svg { max-width: 100%; height: auto; }
 h1, h2, h3, h4, h5 {
   font-family: var(--font-mono);
   font-weight: var(--weight-semibold);
   color: var(--text-primary);
   margin: 0 0 var(--space-4);
+  overflow-wrap: break-word;
 }
 h1 { font-size: var(--h1-size); line-height: var(--h1-line); letter-spacing: var(--h1-tracking); }
 h2 { font-size: var(--h2-size); line-height: var(--h2-line); letter-spacing: var(--h2-tracking); }
